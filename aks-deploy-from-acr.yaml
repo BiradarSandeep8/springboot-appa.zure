@@ -13,7 +13,7 @@ spec:
         app: springboot-app
     spec:
       containers:
-      - name: azuredb2acr
+      - name: my-springboot-app
         image: azuredb2acr.azurecr.io/abcd:300
         imagePullPolicy: Always
         ports:
