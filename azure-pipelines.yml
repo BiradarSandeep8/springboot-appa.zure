@@ -44,8 +44,6 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
 
-- stage: BuildDockerImage
-  jobs:
   - job: DockerBuild
     displayName: Build and Push Docker Image
     pool:
@@ -53,7 +51,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'AzureDB2Acr'
+        containerRegistry: 'newServconcn'
         repository: 'abcd'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
