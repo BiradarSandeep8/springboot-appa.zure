@@ -40,4 +40,4 @@ steps:
     action: 'deploy'
     connectionType: 'kubernetesServiceConnection'
     kubernetesServiceConnection: 'aks1-acb2-default'
-    manifests: 'manifests'
+    manifests: '**/*.yaml'
