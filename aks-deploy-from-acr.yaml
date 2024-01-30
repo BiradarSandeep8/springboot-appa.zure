@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: azuredb2acr
-        image: azuredb2acr.azurecr.io/abcd:latest
+        image: azuredb2acr.azurecr.io/abcd:300
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
