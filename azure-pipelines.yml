@@ -35,3 +35,9 @@ steps:
     repository: 'abcd'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+- task: KubernetesManifest@1
+  inputs:
+    action: 'deploy'
+    connectionType: 'kubernetesServiceConnection'
+    kubernetesServiceConnection: 'aks1-acb2-default'
+    manifests: 'manifests'
