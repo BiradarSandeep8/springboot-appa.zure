@@ -18,7 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: 'ubuntu-latest'  # Use a valid Ubuntu image label
+      vmImage: WindowVm  # Use a valid Ubuntu image label
     steps:
     - task: Maven@4
       inputs:
@@ -47,7 +47,7 @@ stages:
   - job: DockerBuild
     displayName: Build and Push Docker Image
     pool:
-      vmImage: 'ubuntu-latest'
+      vmImage: WindowVm
     steps:
     - task: Docker@2
       inputs:
