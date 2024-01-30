@@ -43,10 +43,3 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
-
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'AzureDB2Acr'
-        repository: 'azuredb2'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'  # Update the path to your Dockerfile
