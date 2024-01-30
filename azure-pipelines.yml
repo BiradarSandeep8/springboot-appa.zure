@@ -1,7 +1,3 @@
-# Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
 trigger:
 - main
 
@@ -18,7 +14,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: WindowVm  # Use a valid Ubuntu image label
+      vmImage: 'windows-latest'  # Use a valid Windows image label
     steps:
     - task: Maven@4
       inputs:
@@ -47,7 +43,7 @@ stages:
   - job: DockerBuild
     displayName: Build and Push Docker Image
     pool:
-      vmImage: WindowVm
+      vmImage: 'windows-latest'
     steps:
     - task: Docker@2
       inputs:
