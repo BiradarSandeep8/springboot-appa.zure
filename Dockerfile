@@ -1,16 +1,4 @@
-# Use an appropriate base image for Windows
-# Use an appropriate base image for Windows
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
-
-# Set the working directory
-WORKDIR /app
-
-# Copy the JAR file into the container
-COPY springbootApp.jar .
-
-# Expose the port
+FROM lolhens/baseimage-openjre
+ADD target/springbootApp.jar springbootApp.jar
 EXPOSE 80
-
-# Specify the command to run on container startup
-CMD ["java", "-jar", "springbootApp.jar"]
-
+ENTRYPOINT ["java", "-jar", "springbootApp.jar"]
