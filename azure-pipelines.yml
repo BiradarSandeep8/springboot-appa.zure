@@ -18,7 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: 'windows-latest'  # Correct image label for Windows-based agent
+      vmImage: 'ubuntu-latest'  # Use a valid Ubuntu image label
     steps:
     - task: Maven@4
       inputs:
@@ -49,4 +49,4 @@ stages:
         containerRegistry: 'AzureDB2Acr'
         repository: 'azuredb2'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '**/Dockerfile'  # Update the path to your Dockerfile
