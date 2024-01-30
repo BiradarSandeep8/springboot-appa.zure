@@ -43,3 +43,17 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
+
+- stage: BuildDockerImage
+  jobs:
+  - job: DockerBuild
+    displayName: Build and Push Docker Image
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'AzureDB2Acr'
+        repository: 'abcd'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
