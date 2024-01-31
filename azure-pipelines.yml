@@ -32,7 +32,7 @@ steps:
     publishLocation: 'Container'
 - task: Docker@2
   inputs:
-    containerRegistry: 'newServconcn'
-    repository: 'abcd'
+    containerRegistry: 'docker-connection'
+    repository: 'biradarsandeep/contRepo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
