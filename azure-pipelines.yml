@@ -20,19 +20,22 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: 'aks-deploy-from-acr.yaml'
     TargetFolder: '$(build.artifactstagingdirectory)'
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+    
 - task: Docker@2
   inputs:
-    containerRegistry: 'docker-connection'
-    repository: 'biradarsandeep/contRepo'
+    containerRegistry: 'newServconcn'
+    repository: 'abcd'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
