@@ -47,6 +47,8 @@ steps:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'myAKSCluster-default'
     command: 'apply'
+    useConfigurationFile: true
+    configuration: 'aks-deploy-from-acr.yaml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
     azureSubscriptionEndpointForSecrets: 'Free Trial(ee26c371-18ef-4132-a823-e6f2119a6609)'
