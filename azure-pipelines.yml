@@ -42,3 +42,12 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: |
       $(Build.BuildId)
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceEndpoint: 'myAKSCluster-default'
+    command: 'apply'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
+    azureSubscriptionEndpointForSecrets: 'Free Trial(ee26c371-18ef-4132-a823-e6f2119a6609)'
+    azureContainerRegistry: 'userregistrationcontainer.azurecr.io'
