@@ -9,7 +9,16 @@ trigger:
 pool:
   name: myagent
 
+variables:
+  mavenVersion: '3.6.3'
+  jdkVersion: '11.0.21'
+
 steps:
+- task: UseJavaVersion@2
+  inputs:
+    versionSpec: '$(jdkVersion)'
+    addToPath: true
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
