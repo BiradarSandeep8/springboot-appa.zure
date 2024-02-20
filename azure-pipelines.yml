@@ -32,10 +32,13 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-    
+
 - task: Docker@2
+  displayName: 'Build and push Docker image'
   inputs:
+    command: 'buildAndPush'
     containerRegistry: 'UserregistrationContainer'
     repository: 'urimage'
-    command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
