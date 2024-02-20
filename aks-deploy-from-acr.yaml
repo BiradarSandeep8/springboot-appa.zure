@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: azuredb2acr
-        image: azuredb2acr.azurecr.io/abcd:307
+        image: userregistrationcontainer.azurecr.io/urimage:21
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
